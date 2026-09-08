@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>БабушкаСкажет</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <!-- Мобильная версия (два блока) -->
+  <div id="mobile-wrapper">
+    <div id="mobile-header">
+      <h1>БабушкаСкажет</h1>
+      <div class="subhead">Обниму словом, успокою душу</div>
+    </div>
+    <div id="mobile-body">
+      <form id="form">
+        <div class="form-group">
+          <label for="name">Как к вам обращаться? (необязательно)</label>
+          <input type="text" id="name" placeholder="Например, Анна">
+        </div>
+        <div class="form-group">
+          <label for="question">Ваш вопрос:</label>
+          <textarea id="question" rows="3" placeholder="О чём хотите спросить?"></textarea>
+        </div>
+        <div class="btn-group">
+          <button type="button" id="askBtn">Спросить</button>
+          <button type="button" id="resetBtn" class="btn-secondary">Спросить ещё</button>
+        </div>
+      </form>
+
+      <div id="result" class="card"></div>
+
+      <div class="footer">
+        <hr class="footer-divider">
+        <span>Есть идея или нашли ошибку?</span><br>
+        <a href="mailto:babushkaskazhet@example.com?subject=Обратная%20связь%20для%20БабушкаСкажет" class="feedback-btn">📩 Написать бабушке</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ПК/планшетная версия (один блок) -->
+  <div class="container">
+    <h1>БабушкаСкажет</h1>
+    <div class="subhead">Обниму словом, успокою душу</div>
+
+    <div id="loading">Бабушка готовится...</div>
+
+    <form id="form-pc">
+      <div class="form-group">
+        <label for="name-pc">Как к вам обращаться? (необязательно)</label>
+        <input type="text" id="name-pc" placeholder="Например, Анна">
+      </div>
+      <div class="form-group">
+        <label for="question-pc">Ваш вопрос:</label>
+        <textarea id="question-pc" rows="3" placeholder="О чём хотите спросить?"></textarea>
+      </div>
+      <div class="btn-group">
+        <button type="button" id="askBtn-pc">Спросить</button>
+        <button type="button" id="resetBtn-pc" class="btn-secondary">Спросить ещё</button>
+      </div>
+    </form>
+
+    <div id="result-pc" class="card"></div>
+
+    <div class="footer">
+      <hr class="footer-divider">
+      <span>Есть идея или нашли ошибку?</span><br>
+      <a href="mailto:babushkaskazhet@example.com?subject=Обратная%20связь%20для%20БабушкаСкажет" class="feedback-btn">📩 Написать бабушке</a>
+    </div>
+  </div>
+
+  <script src="scripts/dataManager.js"></script>
+  <script src="scripts/generator.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
