@@ -1,0 +1,498 @@
+/* styles/style.css */
+:root {
+  --bg-start: #fde2d0;
+  --bg-end: #f8c8b0;
+  --card-bg: rgba(255, 248, 240, 0.85);
+  --text-primary: #3e2c1b;
+  --text-secondary: #6b5a4a;
+  --accent: #b45f3a;
+  --accent-hover: #9a4f2f;
+  --btn-secondary: #d4a88c;
+  --btn-secondary-hover: #c29478;
+  --shadow: rgba(90, 60, 40, 0.1);
+  --border: #dcc4b4;
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Georgia', 'Times New Roman', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../images/background.jpg');
+  background-size: cover;
+  background-position: center 47%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* ====== ПК-блок (только для ширины > 1024px) ====== */
+.container {
+  position: fixed;
+  top: 15vh;
+  left: 5vw;
+  max-width: 580px;
+  width: 85vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--card-bg);
+  backdrop-filter: blur(4px);
+  border-radius: 32px;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 8px 32px var(--shadow);
+  border: 1px solid rgba(255, 248, 240, 0.6);
+  margin: 0;
+  transform: none;
+}
+
+/* ====== ПК-настройки для больших разрешений (1440+) ====== */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .container {
+    left: 8vw;
+    top: 15vh;
+    width: 70vw;
+    max-width: 700px;
+    padding: 2.5rem 2.5rem;
+  }
+  h1 {
+    font-size: 2.8rem;
+  }
+  .subhead {
+    font-size: 1.2rem;
+  }
+  input, textarea, button {
+    font-size: 1.1rem;
+  }
+  .card {
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .container {
+    left: 12vw;
+    top: 18vh;
+    max-width: 800px;
+    width: 65vw;
+    padding: 2.8rem 2.8rem;
+  }
+  h1 {
+    font-size: 3.2rem;
+  }
+  .subhead {
+    font-size: 1.4rem;
+  }
+  input, textarea, button {
+    font-size: 1.2rem;
+  }
+  .card {
+    font-size: 1.3rem;
+    padding: 2.2rem;
+  }
+}
+
+@media (min-width: 2560px) and (max-width: 3839px) {
+  .container {
+    left: 15vw;
+    top: 20vh;
+    max-width: 900px;
+    width: 60vw;
+    padding: 3rem 3rem;
+  }
+  h1 {
+    font-size: 3.6rem;
+  }
+  .subhead {
+    font-size: 1.5rem;
+  }
+  input, textarea, button {
+    font-size: 1.3rem;
+  }
+  .card {
+    font-size: 1.4rem;
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 3840px) {
+  .container {
+    left: 18vw;
+    top: 22vh;
+    max-width: 1350px;
+    width: 55vw;
+    padding: 4rem 4rem;
+  }
+  h1 {
+    font-size: 5.4rem;
+  }
+  .subhead {
+    font-size: 2.2rem;
+  }
+  input, textarea, button {
+    font-size: 2rem;
+  }
+  .card {
+    font-size: 2.1rem;
+    padding: 3.5rem;
+  }
+}
+
+/* ====== Мобильная обёртка (по умолчанию скрыта) ====== */
+#mobile-wrapper {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 580px;
+  gap: 6vh;
+  margin-top: 1vh;
+}
+
+#mobile-header {
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+  background: rgba(255, 248, 240, 0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  text-align: center;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+#mobile-header h1 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid var(--border);
+}
+#mobile-header .subhead {
+  font-size: 0.85rem;
+  margin: 0.2rem 0 0 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+#mobile-body {
+  width: 100%;
+  padding: 1rem 0.8rem;
+  background: rgba(255, 248, 240, 0.85);
+  backdrop-filter: blur(4px);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px var(--shadow);
+  max-height: 55vh;
+  overflow-y: auto;
+  margin-bottom: 3vh;
+}
+
+/* ====== Общие стили ====== */
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.5px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.6rem;
+}
+.subhead {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.8rem;
+  font-style: italic;
+  letter-spacing: 0.3px;
+}
+.form-group {
+  margin-bottom: 1.2rem;
+}
+label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+  opacity: 0.85;
+}
+input, textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: #fffcf8;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: border 0.2s, box-shadow 0.2s;
+  color: var(--text-primary);
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(180, 95, 58, 0.15);
+}
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.btn-group {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+button {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.7rem 1.2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.1s;
+  background: var(--accent);
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+button:hover {
+  background: var(--accent-hover);
+  transform: scale(1.02);
+}
+button:active {
+  transform: scale(0.97);
+}
+.btn-secondary {
+  background: var(--btn-secondary);
+  color: var(--text-primary);
+}
+.btn-secondary:hover {
+  background: var(--btn-secondary-hover);
+}
+.card {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fffaf5;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px var(--shadow);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  display: none;
+}
+.card.visible {
+  display: block;
+  animation: fadeSlide 0.4s ease-out;
+}
+.card .greeting {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.card .proverb {
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--border);
+}
+.card .support {
+  font-weight: 500;
+  margin-top: 0.8rem;
+}
+.card hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0.8rem 0;
+  opacity: 0.5;
+}
+.card .full {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 0.5rem;
+  opacity: 0.8;
+  width: 100%;
+  border-top: 1px solid var(--border);
+}
+.footer .feedback-btn {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.4rem 1.2rem;
+  background: var(--btn-secondary);
+  color: var(--text-primary);
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+  border: 1px solid var(--border);
+}
+.footer .feedback-btn:hover {
+  background: var(--btn-secondary-hover);
+  transform: scale(1.02);
+  text-decoration: none;
+}
+#result {
+  display: none;
+}
+#result.visible {
+  display: block;
+}
+
+/* ====== Единый медиа-запрос для планшетов и мобилок (до 1024px) ====== */
+@media (max-width: 1024px) {
+  body {
+    justify-content: flex-start;
+    padding: 0;
+    background-attachment: scroll;
+    background-position: center 30%;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .container {
+    display: none !important;
+  }
+
+  #mobile-wrapper {
+    display: flex !important;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  #mobile-header {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    background: rgba(255, 248, 240, 0.75);
+    backdrop-filter: blur(4px);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    text-align: center;
+    box-shadow: 0 4px 16px var(--shadow);
+    margin-bottom: 0.5rem;
+  }
+
+  #mobile-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20vh;
+    width: 100%;
+    padding: 1rem 0.8rem;
+    background: rgba(255, 248, 240, 0.85);
+    backdrop-filter: blur(4px);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px var(--shadow);
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+
+  #mobile-body .form-group {
+    margin-bottom: 0.6rem;
+  }
+  #mobile-body label {
+    font-size: 0.8rem;
+  }
+  #mobile-body input,
+  #mobile-body textarea {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.7rem;
+  }
+  #mobile-body textarea {
+    min-height: 50px;
+  }
+  #mobile-body .btn-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #mobile-body button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    width: 100%;
+    min-width: unset;
+  }
+  #mobile-body .card {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  #mobile-body .card .greeting {
+    font-size: 1rem;
+  }
+  #mobile-body .card .proverb {
+    font-size: 0.9rem;
+  }
+  #mobile-body .card .support {
+    font-size: 0.9rem;
+  }
+  #mobile-body .card .full {
+    font-size: 0.8rem;
+  }
+  #mobile-body .footer {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.75rem;
+    width: 100%;
+  }
+  #mobile-body .footer .feedback-btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.8rem;
+  }
+}
+
+/* ====== ТОЧЕЧНЫЕ ПРАВКИ (расширенные диапазоны) ====== */
+
+/* 1. Для компактных телефонов (iPhone SE, 6/7/8 и др.) – ширина до 400px, высота до 700px */
+@media (max-width: 400px) and (max-height: 700px) {
+  #mobile-body {
+    bottom: 5vh !important;
+  }
+}
+
+/* 2. Для iPad (1024×768) */
+@media (min-width: 1024px) and (max-width: 1024px) and (max-height: 768px) {
+  #mobile-body {
+    bottom: 10vh !important;
+  }
+}
