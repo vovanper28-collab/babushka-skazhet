@@ -1,4 +1,6 @@
-/* styles/style.css */
+/* styles/style.css — БабушкаСкажет (чистая версия) */
+
+/* ============ 1. БАЗА ============ */
 :root {
   --bg-start: #fde2d0;
   --bg-end: #f8c8b0;
@@ -15,15 +17,11 @@
   --font-body: 'Georgia', 'Times New Roman', serif;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: var(--font-body);
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('../images/background.jpg');
   background-size: cover;
@@ -31,8 +29,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
   color: var(--text-primary);
   display: flex;
   flex-direction: column;
@@ -41,7 +37,7 @@ body {
   padding: 1rem;
 }
 
-/* ====== ПК-блок (только для ширины > 1024px) ====== */
+/* ============ 2. ПК-КОНТЕЙНЕР ============ */
 .container {
   position: fixed;
   top: 15vh;
@@ -56,104 +52,41 @@ body {
   padding: 2rem 1.8rem;
   box-shadow: 0 8px 32px var(--shadow);
   border: 1px solid rgba(255, 248, 240, 0.6);
-  margin: 0;
-  transform: none;
 }
 
-/* ====== ПК-настройки для больших разрешений (1440+) ====== */
 @media (min-width: 1440px) and (max-width: 1919px) {
-  .container {
-    left: 8vw;
-    top: 15vh;
-    width: 70vw;
-    max-width: 700px;
-    padding: 2.5rem 2.5rem;
-  }
-  h1 {
-    font-size: 2.8rem;
-  }
-  .subhead {
-    font-size: 1.2rem;
-  }
-  input, textarea, button {
-    font-size: 1.1rem;
-  }
-  .card {
-    font-size: 1.2rem;
-    padding: 2rem;
-  }
+  .container { left: 8vw; width: 70vw; max-width: 700px; padding: 2.5rem; }
+  h1 { font-size: 2.8rem; }
+  .subhead { font-size: 1.2rem; }
+  input, textarea, button { font-size: 1.1rem; }
+  .card { font-size: 1.2rem; padding: 2rem; }
 }
 
 @media (min-width: 1920px) and (max-width: 2559px) {
-  .container {
-    left: 12vw;
-    top: 18vh;
-    max-width: 800px;
-    width: 65vw;
-    padding: 2.8rem 2.8rem;
-  }
-  h1 {
-    font-size: 3.2rem;
-  }
-  .subhead {
-    font-size: 1.4rem;
-  }
-  input, textarea, button {
-    font-size: 1.2rem;
-  }
-  .card {
-    font-size: 1.3rem;
-    padding: 2.2rem;
-  }
+  .container { left: 12vw; top: 18vh; max-width: 800px; width: 65vw; padding: 2.8rem; }
+  h1 { font-size: 3.2rem; }
+  .subhead { font-size: 1.4rem; }
+  input, textarea, button { font-size: 1.2rem; }
+  .card { font-size: 1.3rem; padding: 2.2rem; }
 }
 
 @media (min-width: 2560px) and (max-width: 3839px) {
-  .container {
-    left: 15vw;
-    top: 20vh;
-    max-width: 900px;
-    width: 60vw;
-    padding: 3rem 3rem;
-  }
-  h1 {
-    font-size: 3.6rem;
-  }
-  .subhead {
-    font-size: 1.5rem;
-  }
-  input, textarea, button {
-    font-size: 1.3rem;
-  }
-  .card {
-    font-size: 1.4rem;
-    padding: 2.5rem;
-  }
+  .container { left: 15vw; top: 20vh; max-width: 900px; width: 60vw; padding: 3rem; }
+  h1 { font-size: 3.6rem; }
+  .subhead { font-size: 1.5rem; }
+  input, textarea, button { font-size: 1.3rem; }
+  .card { font-size: 1.4rem; padding: 2.5rem; }
 }
 
 @media (min-width: 3840px) {
-  .container {
-    left: 18vw;
-    top: 22vh;
-    max-width: 1350px;
-    width: 55vw;
-    padding: 4rem 4rem;
-  }
-  h1 {
-    font-size: 5.4rem;
-  }
-  .subhead {
-    font-size: 2.2rem;
-  }
-  input, textarea, button {
-    font-size: 2rem;
-  }
-  .card {
-    font-size: 2.1rem;
-    padding: 3.5rem;
-  }
+  .container { left: 18vw; top: 22vh; max-width: 1350px; width: 55vw; padding: 4rem; }
+  h1 { font-size: 5.4rem; }
+  .subhead { font-size: 2.2rem; }
+  input, textarea, button { font-size: 2rem; }
+  .card { font-size: 2.1rem; padding: 3.5rem; }
 }
 
-/* ====== Мобильная обёртка (по умолчанию скрыта) ====== */
+/* ============ 3. МОБИЛЬНАЯ ОБЁРТКА (по умолчанию скрыта) ============ */
 #mobile-wrapper {
   display: none;
   flex-direction: column;
@@ -174,6 +107,7 @@ body {
   text-align: center;
   box-shadow: 0 4px 16px var(--shadow);
 }
+
 #mobile-header h1 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -183,6 +117,7 @@ body {
   padding-bottom: 0.2rem;
   border-bottom: 2px solid var(--border);
 }
+
 #mobile-header .subhead {
   font-size: 0.85rem;
   margin: 0.2rem 0 0 0;
@@ -203,7 +138,7 @@ body {
   margin-bottom: 3vh;
 }
 
-/* ====== Общие стили ====== */
+/* ============ 4. ОБЩИЕ ЭЛЕМЕНТЫ ============ */
 h1 {
   font-family: var(--font-heading);
   font-size: 2.2rem;
@@ -215,6 +150,7 @@ h1 {
   border-bottom: 2px solid var(--border);
   padding-bottom: 0.6rem;
 }
+
 .subhead {
   text-align: center;
   font-size: 1rem;
@@ -223,9 +159,9 @@ h1 {
   font-style: italic;
   letter-spacing: 0.3px;
 }
-.form-group {
-  margin-bottom: 1.2rem;
-}
+
+.form-group { margin-bottom: 1.2rem; }
+
 label {
   display: block;
   font-size: 0.95rem;
@@ -234,6 +170,7 @@ label {
   color: var(--text-primary);
   opacity: 0.85;
 }
+
 input, textarea {
   width: 100%;
   padding: 0.7rem 0.9rem;
@@ -245,21 +182,17 @@ input, textarea {
   transition: border 0.2s, box-shadow 0.2s;
   color: var(--text-primary);
 }
+
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(180, 95, 58, 0.15);
 }
-textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-.btn-group {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
+
+textarea { resize: vertical; min-height: 80px; }
+
+.btn-group { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.5rem; }
+
 button {
   flex: 1;
   min-width: 120px;
@@ -275,20 +208,13 @@ button {
   color: #fff;
   letter-spacing: 0.3px;
 }
-button:hover {
-  background: var(--accent-hover);
-  transform: scale(1.02);
-}
-button:active {
-  transform: scale(0.97);
-}
-.btn-secondary {
-  background: var(--btn-secondary);
-  color: var(--text-primary);
-}
-.btn-secondary:hover {
-  background: var(--btn-secondary-hover);
-}
+
+button:hover { background: var(--accent-hover); transform: scale(1.02); }
+button:active { transform: scale(0.97); }
+
+.btn-secondary { background: var(--btn-secondary); color: var(--text-primary); }
+.btn-secondary:hover { background: var(--btn-secondary-hover); }
+
 .card {
   margin-top: 2rem;
   padding: 1.5rem;
@@ -301,42 +227,19 @@ button:active {
   color: var(--text-primary);
   display: none;
 }
-.card.visible {
-  display: block;
-  animation: fadeSlide 0.4s ease-out;
-}
-.card .greeting {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 0.3rem;
-}
-.card .proverb {
-  font-style: italic;
-  color: var(--text-secondary);
-  margin: 0.5rem 0;
-  padding-left: 0.5rem;
-  border-left: 3px solid var(--border);
-}
-.card .support {
-  font-weight: 500;
-  margin-top: 0.8rem;
-}
-.card hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 0.8rem 0;
-  opacity: 0.5;
-}
-.card .full {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  font-style: italic;
-}
+
+.card.visible { display: block; animation: fadeSlide 0.4s ease-out; }
+.card .greeting { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin-bottom: 0.3rem; }
+.card .proverb { font-style: italic; color: var(--text-secondary); margin: 0.5rem 0; padding-left: 0.5rem; border-left: 3px solid var(--border); }
+.card .support { font-weight: 500; margin-top: 0.8rem; }
+.card hr { border: none; border-top: 1px solid var(--border); margin: 0.8rem 0; opacity: 0.5; }
+.card .full { font-size: 0.95rem; color: var(--text-secondary); font-style: italic; }
+
 @keyframes fadeSlide {
   0% { opacity: 0; transform: translateY(12px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
 .footer {
   text-align: center;
   margin-top: 2rem;
@@ -345,6 +248,7 @@ button:active {
   width: 100%;
   border-top: 1px solid var(--border);
 }
+
 .footer .feedback-btn {
   display: inline-block;
   margin-top: 0.4rem;
@@ -357,19 +261,32 @@ button:active {
   transition: background 0.2s, transform 0.1s;
   border: 1px solid var(--border);
 }
+
 .footer .feedback-btn:hover {
   background: var(--btn-secondary-hover);
   transform: scale(1.02);
   text-decoration: none;
 }
-#result {
-  display: none;
-}
-#result.visible {
+
+#result { display: none; }
+#result.visible { display: block; }
+
+/* ============ 5. H1 С БРЕНДОМ И ФУТЕР ДЛЯ SEO ============ */
+body.seo-page h1 .brand {
   display: block;
+  font-size: 0.65em;
+  font-weight: 700;
+  color: #b45f3a;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.35em;
+  padding-bottom: 0.35em;
+  border-bottom: 2px solid #dcc4b4;
 }
 
-/* ====== Единый медиа-запрос для планшетов и мобилок (до 1024px) ====== */
+body.seo-page h1 { border-bottom: none; padding-bottom: 0; }
+body.seo-page .footer > span:first-of-type { color: #b45f3a; font-weight: 600; }
+
+/* ============ 6. МОБИЛЬНАЯ ВЁРСТКА (до 1024px) — для главной ============ */
 @media (max-width: 1024px) {
   body {
     justify-content: flex-start;
@@ -380,119 +297,132 @@ button:active {
     margin: 0;
     overflow: hidden;
   }
+  .container { display: none !important; }
+  #mobile-wrapper { display: flex !important; }
 
-  .container {
-    display: none !important;
+  #mobile-body .form-group { margin-bottom: 0.6rem; }
+  #mobile-body label { font-size: 0.8rem; }
+  #mobile-body input, #mobile-body textarea { font-size: 0.9rem; padding: 0.5rem 0.7rem; }
+  #mobile-body textarea { min-height: 50px; }
+  #mobile-body .btn-group { flex-direction: column; gap: 0.5rem; }
+  #mobile-body button { font-size: 0.9rem; padding: 0.5rem; width: 100%; min-width: unset; }
+  #mobile-body .card { margin-top: 1rem; padding: 0.8rem; font-size: 0.9rem; }
+  #mobile-body .card .greeting { font-size: 1rem; }
+  #mobile-body .card .proverb, #mobile-body .card .support { font-size: 0.9rem; }
+  #mobile-body .card .full { font-size: 0.8rem; }
+  #mobile-body .footer { margin-top: 1rem; padding-top: 0.5rem; font-size: 0.75rem; }
+  #mobile-body .footer .feedback-btn { font-size: 0.75rem; padding: 0.25rem 0.8rem; }
+}
+
+@media (max-width: 1024px) and (min-width: 601px) {
+  #mobile-wrapper { max-width: 700px; }
+}
+
+/* ============ 7. SEO: НА ПЛАНШЕТАХ И ПК — .container В ПОТОКЕ ============ */
+@media (min-width: 601px) {
+  body.seo-page {
+    display: block !important;
+    padding: 2rem 1rem !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
   }
 
-  #mobile-wrapper {
+  body.seo-page .container {
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 0 auto 2rem !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    max-width: 700px !important;
+    width: 90vw !important;
+    transform: none !important;
+  }
+
+  body.seo-page #mobile-wrapper { display: none !important; }
+}
+
+/* ============ 8. SEO-МОБИЛЬНЫЕ: ШАПКА СВЕРХУ, ФОРМА ВНИЗУ ============ */
+@media (max-width: 600px) {
+  html body.seo-page {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    background-position: 70% 10% !important;
+  }
+
+  html body.seo-page #mobile-wrapper {
     display: flex !important;
-    flex-direction: column;
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0.5rem;
-    box-sizing: border-box;
+    flex-direction: column !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0.5rem 0.5rem 1rem 0.5rem !important;
+    box-sizing: border-box !important;
+    gap: 0 !important;
+    max-width: 100% !important;
   }
 
-  #mobile-header {
-    flex-shrink: 0;
-    width: 100%;
-    padding: 0.8rem 0.5rem;
-    background: rgba(255, 248, 240, 0.75);
-    backdrop-filter: blur(4px);
-    border-radius: 24px;
-    border: 1px solid var(--border);
-    text-align: center;
-    box-shadow: 0 4px 16px var(--shadow);
-    margin-bottom: 0.5rem;
-  }
+  html body.seo-page #mobile-header { flex: 0 0 auto !important; margin: 0 !important; }
 
-  #mobile-body {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 20vh;
-    width: 100%;
-    padding: 1rem 0.8rem;
-    background: rgba(255, 248, 240, 0.85);
-    backdrop-filter: blur(4px);
-    border-radius: 24px;
-    border: 1px solid var(--border);
-    box-shadow: 0 4px 16px var(--shadow);
-    max-height: 55vh;
-    overflow-y: auto;
-  }
-
-  #mobile-body .form-group {
-    margin-bottom: 0.6rem;
-  }
-  #mobile-body label {
-    font-size: 0.8rem;
-  }
-  #mobile-body input,
-  #mobile-body textarea {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.7rem;
-  }
-  #mobile-body textarea {
-    min-height: 50px;
-  }
-  #mobile-body .btn-group {
-    flex-direction: column;
+  html body.seo-page #mobile-body {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    margin: 0 !important;
+    margin-top: auto !important;
+    padding: 0 !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
     gap: 0.5rem;
   }
-  #mobile-body button {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-    width: 100%;
-    min-width: unset;
-  }
-  #mobile-body .card {
-    margin-top: 1rem;
-    padding: 0.8rem;
-    font-size: 0.9rem;
-  }
-  #mobile-body .card .greeting {
-    font-size: 1rem;
-  }
-  #mobile-body .card .proverb {
-    font-size: 0.9rem;
-  }
-  #mobile-body .card .support {
-    font-size: 0.9rem;
-  }
-  #mobile-body .card .full {
-    font-size: 0.8rem;
-  }
-  #mobile-body .footer {
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    font-size: 0.75rem;
-    width: 100%;
-  }
-  #mobile-body .footer .feedback-btn {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.8rem;
-  }
-}
 
-/* ====== ТОЧЕЧНЫЕ ПРАВКИ (расширенные диапазоны) ====== */
-
-/* 1. Для компактных телефонов (iPhone SE, 6/7/8 и др.) – ширина до 400px, высота до 700px */
-@media (max-width: 400px) and (max-height: 700px) {
-  #mobile-body {
-    bottom: 5vh !important;
+  html body.seo-page #mobile-body form,
+  html body.seo-page #mobile-body #result,
+  html body.seo-page #mobile-body .footer {
+    background: rgba(255, 248, 240, 0.92) !important;
+    border: 1px solid #dcc4b4 !important;
+    border-radius: 20px !important;
+    padding: 0.9rem !important;
+    box-shadow: 0 4px 16px rgba(90, 60, 40, 0.1) !important;
+    margin: 0 !important;
   }
-}
 
-/* 2. Для iPad (1024×768) */
-@media (min-width: 1024px) and (max-width: 1024px) and (max-height: 768px) {
-  #mobile-body {
-    bottom: 10vh !important;
+  html body.seo-page #mobile-body .footer { margin-top: 0 !important; text-align: center !important; }
+  html body.seo-page #mobile-body .form-group { margin-bottom: 0.6rem !important; }
+  html body.seo-page #mobile-body label { font-size: 0.8rem !important; }
+  html body.seo-page #mobile-body input,
+  html body.seo-page #mobile-body textarea { font-size: 0.9rem !important; padding: 0.5rem 0.7rem !important; }
+  html body.seo-page #mobile-body textarea { min-height: 50px !important; }
+  html body.seo-page #mobile-body .btn-group { flex-direction: column !important; gap: 0.5rem !important; }
+  html body.seo-page #mobile-body button {
+    font-size: 0.9rem !important;
+    padding: 0.5rem !important;
+    width: 100% !important;
+    min-width: unset !important;
+  }
+  html body.seo-page #mobile-body .card {
+    font-size: 0.9rem !important;
+    padding: 0.8rem !important;
+    margin-top: 0 !important;
+  }
+  html body.seo-page #mobile-body .footer { font-size: 0.75rem !important; }
+  html body.seo-page #mobile-body .footer .feedback-btn {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.8rem !important;
   }
 }
