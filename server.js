@@ -1,5 +1,6 @@
 // server.js (финальная версия с подробным логированием)
 const express = require('express');
+const fs = require('fs');
 const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
@@ -21,7 +22,18 @@ if (!process.env.YANDEX_API_KEY || !process.env.YANDEX_FOLDER_ID) {
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
+// Раздаём только нужные статические файлы, а не всю папку
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/sitemap.xml', (req, res) => res.sendFile(path.join(__dirname, 'sitemap.xml')));
+app.get('/robots.txt', (req, res) => res.sendFile(path.join(__dirname, 'robots.txt')));
+app.get('/favicon.ico', (req, res) => {
+  const f = path.join(__dirname, 'favicon.ico');
+  if (fs.existsSync(f)) res.sendFile(f); else res.status(204).end();
+});
+app.get('/favicon.png', (req, res) => {
+  const f = path.join(__dirname, 'favicon.png');
+  if (fs.existsSync(f)) res.sendFile(f); else res.status(204).end();
+});
 
 app.post('/api/generate', async (req, res) => {
   const { userName, question } = req.body;

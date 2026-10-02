@@ -426,3 +426,140 @@ body.seo-page .footer > span:first-of-type { color: #b45f3a; font-weight: 600; }
     padding: 0.25rem 0.8rem !important;
   }
 }
+
+/* ==== ФИНАЛ: один блок на SEO-мобильном, без blur ==== */
+@media (max-width: 600px) {
+  html body.seo-page #mobile-body {
+    background: rgba(255, 248, 240, 0.92) !important;
+    border: 1px solid #dcc4b4 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 16px rgba(90, 60, 40, 0.1) !important;
+    padding: 1rem 0.8rem !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    gap: 0 !important;
+  }
+
+  html body.seo-page #mobile-body form,
+  html body.seo-page #mobile-body #result,
+  html body.seo-page #mobile-body .footer {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 0 0.8rem 0 !important;
+  }
+
+  html body.seo-page #mobile-body .footer {
+    margin-bottom: 0 !important;
+    padding-top: 0.5rem !important;
+    border-top: 1px solid #dcc4b4 !important;
+  }
+}
+
+/* ФИНАЛ 2: блок по размеру содержимого, прижат к низу */
+@media (max-width: 600px) {
+  html body.seo-page #mobile-body {
+    flex: 0 0 auto !important;
+    display: block !important;
+    justify-content: flex-start !important;
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    padding: 1rem 0.8rem !important;
+    background: rgba(255, 248, 240, 0.92) !important;
+    border: 1px solid #dcc4b4 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 16px rgba(90, 60, 40, 0.1) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    min-height: 0 !important;
+  }
+}
+
+/* SEO: ПК + МОБИЛЬНЫЙ — финальный фикс 30.09.2026 */
+@media (min-width: 601px) {
+  body.seo-page .container {
+    position: fixed !important; top: 15vh !important; left: 5vw !important;
+    right: auto !important; bottom: auto !important; margin: 0 !important;
+    max-width: 580px !important; width: 85vw !important; max-height: 80vh !important;
+    overflow-y: auto !important; transform: none !important; display: block !important;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1919px) {
+  body.seo-page .container { left: 8vw !important; width: 70vw !important; max-width: 700px !important; }
+}
+@media (min-width: 1920px) and (max-width: 2559px) {
+  body.seo-page .container { left: 12vw !important; top: 18vh !important; max-width: 800px !important; width: 65vw !important; }
+}
+@media (min-width: 2560px) {
+  body.seo-page .container { left: 15vw !important; top: 20vh !important; max-width: 900px !important; width: 60vw !important; }
+}
+
+@media (max-width: 600px) {
+  html body.seo-page {
+    height: auto !important; min-height: 100dvh !important; max-height: none !important;
+    overflow-y: auto !important; overflow-x: hidden !important;
+  }
+  html body.seo-page #mobile-wrapper {
+    display: flex !important; flex-direction: column !important;
+    min-height: 100dvh !important; height: auto !important; max-height: none !important;
+    padding: 0.5rem !important; box-sizing: border-box !important; gap: 0 !important;
+  }
+  html body.seo-page #mobile-header {
+    flex: 0 0 auto !important; margin: 0 !important; padding: 0.7rem 0.9rem !important;
+    background: rgba(255, 248, 240, 0.94) !important;
+    border: 1px solid #dcc4b4 !important; border-radius: 20px !important;
+    box-shadow: 0 4px 16px rgba(90, 60, 40, 0.1) !important;
+    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+    text-align: center !important;
+  }
+  html body.seo-page #mobile-header h1,
+  html body.seo-page #mobile-header .h1-mobile,
+  html body.seo-page #mobile-header .subhead {
+    background: transparent !important; border: none !important; box-shadow: none !important;
+    padding: 0 !important; margin: 0.15rem 0 !important; display: block !important;
+  }
+  html body.seo-page #mobile-body {
+    flex: 0 0 auto !important; margin-top: auto !important; margin-bottom: 0 !important;
+    padding: 0.7rem 0.8rem !important;
+    background: rgba(255, 248, 240, 0.94) !important;
+    border: 1px solid #dcc4b4 !important; border-radius: 20px !important;
+    box-shadow: 0 4px 16px rgba(90, 60, 40, 0.1) !important;
+    max-height: 42vh !important; overflow-y: auto !important; overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important; box-sizing: border-box !important;
+    display: block !important;
+  }
+  html body.seo-page #mobile-body #result,
+  html body.seo-page #mobile-body .card,
+  html body.seo-page #mobile-body form,
+  html body.seo-page #mobile-body .footer {
+    max-height: none !important; overflow: visible !important;
+  }
+  html body.seo-page #mobile-body input,
+  html body.seo-page #mobile-body textarea { font-size: 16px !important; }
+  html body.seo-page #mobile-body .form-group { margin-bottom: 0.4rem !important; }
+  html body.seo-page #mobile-body label { font-size: 0.8rem !important; }
+  html body.seo-page #mobile-body .btn-group {
+    gap: 0.35rem !important; margin-top: 0.4rem !important;
+    display: flex !important; flex-direction: row !important;
+  }
+  html body.seo-page #mobile-body button {
+    font-size: 0.9rem !important; padding: 0.5rem 0.4rem !important; flex: 1 1 auto !important;
+  }
+  html body.seo-page #mobile-body .card {
+    font-size: 0.9rem !important; padding: 0.6rem 0.7rem !important;
+    margin-top: 0.5rem !important; line-height: 1.45 !important;
+  }
+  html body.seo-page #mobile-body .footer {
+    margin-top: 0.5rem !important; padding-top: 0.4rem !important;
+    font-size: 0.75rem !important; text-align: center !important;
+  }
+  html body.seo-page #mobile-body .footer .feedback-btn {
+    font-size: 0.75rem !important; padding: 0.2rem 0.7rem !important;
+  }
+}

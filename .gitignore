@@ -1,0 +1,27 @@
+# === Секреты ===
+.env
+.env.*
+!.env.example
+
+# === Зависимости ===
+node_modules/
+package-lock.json
+
+# === Бэкапы и временные ===
+*.bak
+*.backup
+*.old
+
+# === Системные ===
+.DS_Store
+Thumbs.db
+*.log
+
+# === Сгенерированный контент ===
+# 446 SEO-страниц — генерируются из table.csv через generators/
+primety/
+sny/
+otnosheniya/
+dengi/
+zdorove/
+sovety/
