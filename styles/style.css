@@ -563,3 +563,61 @@ body.seo-page .footer > span:first-of-type { color: #b45f3a; font-weight: 600; }
     font-size: 0.75rem !important; padding: 0.2rem 0.7rem !important;
   }
 }
+
+/* FIX: Мобильная версия — прижимаем форму к низу и ограничиваем высоту */
+@media (max-width: 600px) {
+  html body.seo-page #mobile-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+  html body.seo-page #mobile-header {
+    flex: 0 0 auto !important;
+    margin-bottom: 10px !important;
+  }
+  html body.seo-page #mobile-body,
+  html body.seo-page .container {
+    flex: 0 0 auto !important;
+    margin-top: auto !important; /* Прижимаем к низу */
+    max-height: 65vh !important; /* Ограничиваем высоту 65% экрана */
+    overflow-y: auto !important; /* Включаем внутреннюю прокрутку */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 50px !important; /* Отступ, чтобы не перекрывать Cookie-баннер */
+  }
+}
+
+/* FIX 2: Прижимаем форму к низу на ВСЕХ мобильных страницах (включая главную) */
+@media (max-width: 600px) {
+  #mobile-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+  
+  #mobile-header {
+    flex: 0 0 auto !important;
+    margin-bottom: 10px !important;
+  }
+  
+  #mobile-body {
+    flex: 0 0 auto !important;
+    margin-top: auto !important; /* Жестко прижимаем к низу */
+    max-height: 65vh !important; /* Ограничиваем высоту 65% экрана */
+    overflow-y: auto !important; /* Включаем скролл, если текст длинный */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 50px !important; /* Место под Cookie-баннер */
+    padding: 0.6rem 0.7rem !important;
+    border-radius: 20px !important;
+    background: rgba(255, 248, 240, 0.94) !important;
+    border: 1px solid #dcc4b4 !important;
+    box-shadow: 0 4px 16px rgba(90, 60, 40, 0.1) !important;
+  }
+}
