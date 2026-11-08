@@ -621,3 +621,136 @@ body.seo-page .footer > span:first-of-type { color: #b45f3a; font-weight: 600; }
     box-shadow: 0 4px 16px rgba(90, 60, 40, 0.1) !important;
   }
 }
+
+/* FIX v108: Спасение страниц категорий (хабов) на ПК и мобильных */
+
+/* 1. Стили для списков (Карточки) */
+.hub-intro {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    text-align: center;
+}
+.hub-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки на ПК */
+    gap: 12px;
+}
+.hub-link {
+    display: block;
+    background: #fff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+.hub-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 4px 12px rgba(180, 95, 58, 0.15);
+    transform: translateY(-2px);
+}
+.hub-link::before {
+    content: "🔮 ";
+    opacity: 0.8;
+    margin-right: 5px;
+}
+
+/* 2. Фикс контейнера на ПК (убираем прилипание к краям) */
+@media (min-width: 601px) {
+    body.hub-page .container {
+        position: relative !important;
+        margin: 40px auto !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        height: auto !important;
+        max-height: 85vh !important;
+        overflow-y: auto !important;
+    }
+}
+
+/* 3. Фикс контейнера на Мобильных (чтобы вообще было видно текст) */
+@media (max-width: 600px) {
+    html body.hub-page {
+        display: block !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        min-height: 100dvh !important;
+        padding: 10px !important;
+    }
+    body.hub-page .container {
+        position: relative !important;
+        margin: 10px auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 20px !important;
+        height: auto !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        max-height: none !important;
+        box-sizing: border-box !important;
+    }
+    .hub-list {
+        grid-template-columns: 1fr; /* Одна колонка на телефоне */
+    }
+}
+
+/* FIX v109: Смещение хабов на ПК влево и принудительное отображение на мобилках */
+
+/* 1. ПК версия - смещаем влево (как на главной) */
+@media (min-width: 601px) {
+    body.hub-page .container {
+        position: fixed !important;
+        top: 15vh !important;
+        left: 5vw !important; /* Жесткий сдвиг влево */
+        right: auto !important;
+        bottom: auto !important;
+        margin: 0 !important;
+        max-width: 580px !important;
+        width: 85vw !important;
+        max-height: 80vh !important;
+        overflow-y: auto !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+}
+
+/* 2. Мобильная версия - жестко возвращаем контейнер */
+@media (max-width: 600px) {
+    /* Разрешаем странице скроллиться */
+    html body.hub-page {
+        display: block !important;
+        height: auto !important;
+        min-height: 100dvh !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Заставляем контейнер появиться */
+    body.hub-page .container {
+        display: block !important;
+        visibility: visible !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin: 20px auto !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 20px !important;
+        height: auto !important;
+        max-height: none !important;
+        box-sizing: border-box !important;
+    }
+}
