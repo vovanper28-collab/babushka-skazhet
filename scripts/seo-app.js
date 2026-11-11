@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   askBtn.addEventListener('click', function () {
-    var userName = nameInput ? nameInput.value.trim() : '';
+    var userName = '';
     var userQuestion = questionInput ? questionInput.value.trim() : '';
     console.log('Ask clicked. Question:', userQuestion);
     if (userQuestion === '') { alert('Задай вопрос, внученька'); return; }
